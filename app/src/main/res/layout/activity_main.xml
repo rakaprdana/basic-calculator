@@ -20,12 +20,13 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!--Constraint input output-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_inputOutput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/cl_groupNum"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
@@ -33,99 +34,337 @@
         <LinearLayout
             android:id="@+id/ll_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_height="0dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="12dp"
                 android:gravity="center|end"
-                android:text="0"
-                android:textSize="24dp"
+                android:text="@string/num0"
+                android:textColor="@color/text"
+                android:textSize="28dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_output"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_height="280px"
             android:background="@drawable/custom_bg"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_input">
-
             <TextView
                 android:id="@+id/tv_output"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="12dp"
                 android:gravity="center|end"
-                android:text="0"
+                android:text="@string/num0"
+                android:textColor="@color/text"
                 android:textSize="48dp"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--    Group of number-->
+    <!--Constraint Numpad    -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_groupNum"
+        android:id="@+id/cl_numPad"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_inputOutput">
+        <!--        Row 1-->
         <LinearLayout
+            android:id="@+id/ll_firstRow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ll_secondRow"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cust_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="2dp"
-                android:text="1"
+                android:layout_weight="28"
+                android:background="@drawable/cust_container"
+                android:text="@string/num1"
                 android:textColor="@color/text"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:backgroundTint="@null"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cust_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="2dp"
-                android:text="2"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num2"
                 android:textColor="@color/text"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:backgroundTint="@null"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cust_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="2dp"
-                android:text="3"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num3"
                 android:textColor="@color/text"
                 android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_del"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/cust_container"
+                android:text="@string/delete"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:backgroundTint="@null"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
+        <!--        Row 2-->
+        <LinearLayout
+            android:id="@+id/ll_secondRow"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/ll_thirdRow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_firstRow">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="28"
+                android:background="@drawable/cust_container"
+                android:text="@string/num4"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num5"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num6"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/cust_container"
+                android:text="@string/plus"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <!--        Row 3-->
+        <LinearLayout
+            android:id="@+id/ll_thirdRow"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/ll_fourthRow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_secondRow">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="28"
+                android:background="@drawable/cust_container"
+                android:text="@string/num7"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num8"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num9"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/cust_container"
+                android:text="@string/minus"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <!--        Row 4-->
+        <LinearLayout
+            android:id="@+id/ll_fourthRow"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_thirdRow">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_koma"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="28"
+                android:background="@drawable/cust_container"
+                android:text="@string/koma"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/num0"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/cust_container"
+                android:text="@string/clear"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_calculate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/cust_container"
+                android:text="@string/calculate"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
